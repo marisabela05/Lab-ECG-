@@ -215,8 +215,12 @@ plt.show()
 ```
 La función lfilter() aplica ese filtro IIR a la señal ECG. A continuación se muestran las gráficas resultantes para la señal sin filtrar y filtrada, correspondientemente.
 
-![image](https://github.com/user-attachments/assets/d859fd90-0508-4b7c-9e3f-81f9970d6599)
- <br><em>Figura 5: Señal ECG original y señal filtrada con IIR.</em>
+<p align="center">
+  <img src="https://github.com/user-attachments/assets/d859fd90-0508-4b7c-9e3f-81f9970d6599" alt="Figura 5" width="800">
+  <br>
+  <em>Figura 5: Señal ECG original y señal filtrada con IIR.</em>
+</p>
+
 
 ### Detección de picos R
 Ahora con la función *find_peaks* detectamos los picos R con un umbral de prominencia y una distancia mínima entre latidos (250 ms). A partir de esos picos, se calculan los intervalos RR, es decir, el tiempo entre latidos consecutivos.
@@ -235,11 +239,18 @@ t = np.arange(len(ecg_signal)) / fs
 ```
 A partir de estos cálculos graficamos tanto la señal filtrada en donde se muestran los picos, como los intervalos entre picos:
 
-![image](https://github.com/user-attachments/assets/fcf863c7-590a-4938-b5cf-8e6a5153c358)
- <br><em>Figura 6: Señal ECG filtrada mostrando los picos R.</em>
- 
-![image](https://github.com/user-attachments/assets/1efcb229-df8f-4511-aa81-ef1a82b07fcf)
- <br><em>Figura 5: Señal con intervalos RR.</em>
+<p align="center">
+  <img src="https://github.com/user-attachments/assets/fcf863c7-590a-4938-b5cf-8e6a5153c358" alt="Figura 6" width="700">
+  <br>
+  <em>Figura 6: Señal ECG filtrada mostrando los picos R.</em>
+</p>
+
+<p align="center">
+  <img src="https://github.com/user-attachments/assets/1efcb229-df8f-4511-aa81-ef1a82b07fcf" alt="Figura 5" width="700">
+  <br>
+  <em>Figura 5: Señal con intervalos RR.</em>
+</p>
+
 
 Después, analizaremos la HRV, la variabilidad de la frecuencia cardíaca en el dominio del tiempo, calculando métricas como la media RR, SDNN (desviación estándar de los intervalos RR), RMSSD (variabilidad a corto plazo), y pNN50 (porcentaje de intervalos consecutivos). Los resultados se muestran en la siguiente tabla:
 | Métrica                        | Valor       | Unidad   |
