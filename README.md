@@ -236,7 +236,19 @@ t = np.arange(len(ecg_signal)) / fs
 A partir de estos cálculos graficamos tanto la señal filtrada en donde se muestran los picos, como los intervalos entre picos:
 
 ![image](https://github.com/user-attachments/assets/fcf863c7-590a-4938-b5cf-8e6a5153c358)
-
+ <br><em>Figura 6: Señal ECG filtrada mostrando los picos R.</em>
+ 
 ![image](https://github.com/user-attachments/assets/1efcb229-df8f-4511-aa81-ef1a82b07fcf)
+ <br><em>Figura 5: Señal con intervalos RR.</em>
+
+Después, analizaremos la HRV, la variabilidad de la frecuencia cardíaca en el dominio del tiempo, calculando métricas como la media RR, SDNN (desviación estándar de los intervalos RR), RMSSD (variabilidad a corto plazo), y pNN50 (porcentaje de intervalos consecutivos). Los resultados se muestran en la siguiente tabla:
+| Métrica                        | Valor       | Unidad   |
+|-------------------------------|-------------|----------|
+| Media de RR (Mean HRV)        | 0.6861      | s        |
+| Desviación estándar de RR     | 0.2369      | s        |
+| SDNN                          | 0.2369      | s        |
+| RMSSD                         | 0.2035      | s        |
+| pNN50                         | 72.54       | %        |
+| Media de los intervalos RR    | 0.6861      | s        |
 
 
