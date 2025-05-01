@@ -31,8 +31,9 @@ El sistema nervioso autónomo (SNA) regula las funciones involuntarias del cuerp
     
 -   #### Actividad parasimpática:  
    Promueve el estado de descanso o digestión, disminuyendo la frecuencia cardíaca y facilitando la recuperación del cuerpo.
-
-![image](https://github.com/user-attachments/assets/7c717fa5-0dcc-42df-8b18-f9e91c0c4f1c)
+   
+![image](https://github.com/user-attachments/assets/49cc6dec-dc0c-4894-9ac4-b23ff1aefdb8)
+<br><em>Figura 1: Sistema nervioso autónomo (simpático y parasimpático).</em></p>
 
 ### Frecuencia cardiaca
 Por un lado, en la actividad simpática, se incrementa la FC al estimular los receptores β-adrenérgicos del corazón, acelerando el nodo sinoauricular. Por otro lado, la actividad parasimpática disminuye la frecuencia cardíaca mediante la acción del nervio vago, que libera acetilcolina y ralentiza la conducción eléctrica en el corazón.
@@ -40,14 +41,39 @@ Por un lado, en la actividad simpática, se incrementa la FC al estimular los re
 El balance entre estas dos actividades regula dinámicamente la frecuencia cardíaca en reposo y durante situaciones de estrés o ejercicio.
 
 ### Variabilidad de la frecuencia cardíaca (HRV)
-La HRV se refiere a las fluctuaciones en los intervalos R-R (tiempo entre dos picos R sucesivos del ECG), y refleja la modulación del SNA sobre el corazón. Una HRV alta generalmente indica buena regulación autonómica y estado de salud, mientras que una HRV baja puede estar asociada a estrés, fatiga o disfunción del SNA.
+La HRV se refiere a las fluctuaciones en los intervalos R-R, estos corresponden al tiempo entre dos picos R sucesivos del ECG, y reflejan la modulación del sistema nervioso autónomo sobre el corazón. Una HRV alta generalmente indica buena regulación autonómica y estado de salud, mientras que una HRV baja puede estar asociada a estrés, fatiga o disfunción del sistema nervioso autónomo.
 
-Las bandas de frecuencia más utilizadas en el análisis espectral de la HRV son:
+Las bandas de frecuencia más utilizadas en el análisis espectral de la HRV organizadas de en orden ascendente de frecuencias son:
 
-ULF (Ultra Low Frequency): < 0.003 Hz (requiere registros largos)
+- *ULF (Ultra Low Frequency):* < 0.003 Hz (requiere registros largos)
 
-VLF (Very Low Frequency): 0.003–0.04 Hz
+- *VLF (Very Low Frequency):* 0.003–0.04 Hz
 
-LF (Low Frequency): 0.04–0.15 Hz (actividad simpática y parasimpática)
+- *LF (Low Frequency):* 0.04–0.15 Hz (actividad simpática y parasimpática)
 
-HF (High Frequency): 0.15–0.4 Hz (predominantemente parasimpática, relacionada con la respiración)
+- *HF (High Frequency):* 0.15–0.4 Hz (predominantemente parasimpática, relacionada con la respiración)
+
+### Transformada Wavelet
+Es una herramienta matemática utilizada para analizar señales en el dominio del *tiempo* y la *frecuencia* **simultáneamente**. A diferencia de la transformada de Fourier, que representa una señal solo en términos de frecuencias globales, la transformada wavelet puede capturar frecuencias locales en distintos momentos del tiempo, como la HRV, en el dominio tiempo-frecuencia. Descompone una señal en pequeñas ondas llamadas wavelets (ondículas), que están localizadas tanto en el tiempo como en la frecuencia. Estas ondículas pueden estirarse (para analizar componentes de baja frecuencia) o comprimirse (para componentes de alta frecuencia).
+
+#### Usos en señales biológicas:
+
+- Análisis de HRV
+
+- Procesamiento de señales EEG, EMG y ECG
+
+- Detección de eventos transitorios o cambios rápidos en la señal
+
+### Tipos comunes de wavelets en bioseñales:
+
+- Daubechies (db4, db6, etc.): Usada para señales discretas, generalmente en ECG por su forma similar al complejo QRS.
+  
+- Morlet: Usada para señales contínuas, útil para análisis de frecuencia continua (CWT), especialmente en HRV.
+
+- Symlets: Una variante más simétrica de Daubechies.
+
+- Coiflets: Buena localización en el tiempo y frecuencia.
+
+![image](https://github.com/user-attachments/assets/8433c33e-95ca-4b80-aff1-ba07685b5b12)
+<br><em>Figura 2: Tipos comunes de wavelets. </em></p>
+
