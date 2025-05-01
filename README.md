@@ -24,5 +24,30 @@ Para ello, adquirimos una señal ECG durante 300 segundos usando un DAQ y progra
 8. Seleccionar una función wavelet adecuada para señales biológicas.
 
 ## Fundamento teórico
-### Actividades del sistema nervioso
+### Actividades del sistema nervioso autónomo
+El sistema nervioso autónomo (SNA) regula las funciones involuntarias del cuerpo, como la frecuencia cardíaca, la presión arterial, la respiración, etc... que se divide en dos ramas para mantener el equilibrio fisiológico (homeostasis).
+-   #### Actividad simpática:  
+    Activa la respuesta de la llamada lucha o huída, aumentando la frecuencia cardíaca, la fuerza de contracción del corazón aumenta y dilata las vías respiratorias.
+    
+-   #### Actividad parasimpática:  
+   Promueve el estado de descanso o digestión, disminuyendo la frecuencia cardíaca y facilitando la recuperación del cuerpo.
 
+![image](https://github.com/user-attachments/assets/7c717fa5-0dcc-42df-8b18-f9e91c0c4f1c)
+
+### Frecuencia cardiaca
+Por un lado, en la actividad simpática, se incrementa la FC al estimular los receptores β-adrenérgicos del corazón, acelerando el nodo sinoauricular. Por otro lado, la actividad parasimpática disminuye la frecuencia cardíaca mediante la acción del nervio vago, que libera acetilcolina y ralentiza la conducción eléctrica en el corazón.
+
+El balance entre estas dos actividades regula dinámicamente la frecuencia cardíaca en reposo y durante situaciones de estrés o ejercicio.
+
+### Variabilidad de la frecuencia cardíaca (HRV)
+La HRV se refiere a las fluctuaciones en los intervalos R-R (tiempo entre dos picos R sucesivos del ECG), y refleja la modulación del SNA sobre el corazón. Una HRV alta generalmente indica buena regulación autonómica y estado de salud, mientras que una HRV baja puede estar asociada a estrés, fatiga o disfunción del SNA.
+
+Las bandas de frecuencia más utilizadas en el análisis espectral de la HRV son:
+
+ULF (Ultra Low Frequency): < 0.003 Hz (requiere registros largos)
+
+VLF (Very Low Frequency): 0.003–0.04 Hz
+
+LF (Low Frequency): 0.04–0.15 Hz (actividad simpática y parasimpática)
+
+HF (High Frequency): 0.15–0.4 Hz (predominantemente parasimpática, relacionada con la respiración)
