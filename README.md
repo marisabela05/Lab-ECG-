@@ -83,9 +83,10 @@ Es una herramienta matemática utilizada para analizar señales en el dominio de
 - Coiflets: Buena localización en el tiempo y frecuencia.
 
 ### Diagrama de flujo
+Planteamos una serie de pasos para llevar a cabo el desarrollo del objetivo, los cuales representamos en el siguiente diagrama de flujo:
 
 <p align="center">
   <img src="https://github.com/user-attachments/assets/b0c6341d-0450-4af8-9ac3-3ec89dcc4f8b" alt="Figura 4: Diagrama en blanco para anotaciones o flujo personalizado." width="50%">
-  <br><em>Figura 4: Diagrama en blanco para anotaciones o flujo personalizado.</em>
+  <br><em>Figura 4: Diagrama correspondiente a los pasos a seguir para desarrollar el laboratorio.</em>
 </p>
 
