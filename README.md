@@ -32,8 +32,11 @@ El sistema nervioso autónomo (SNA) regula las funciones involuntarias del cuerp
 -   #### Actividad parasimpática:  
    Promueve el estado de descanso o digestión, disminuyendo la frecuencia cardíaca y facilitando la recuperación del cuerpo.
    
-![image](https://github.com/user-attachments/assets/49cc6dec-dc0c-4894-9ac4-b23ff1aefdb8)
-<br><em>Figura 1: Sistema nervioso autónomo (simpático y parasimpático).</em></p>
+<p align="center">
+  <img src="https://github.com/user-attachments/assets/49cc6dec-dc0c-4894-9ac4-b23ff1aefdb8" alt="Figura 1: Sistema nervioso autónomo (simpático y parasimpático).">
+  <br><em>Figura 1: Sistema nervioso autónomo (simpático y parasimpático).</em>
+</p>
+
 
 ### Frecuencia cardiaca
 Por un lado, en la actividad simpática, se incrementa la FC al estimular los receptores β-adrenérgicos del corazón, acelerando el nodo sinoauricular. Por otro lado, la actividad parasimpática disminuye la frecuencia cardíaca mediante la acción del nervio vago, que libera acetilcolina y ralentiza la conducción eléctrica en el corazón.
@@ -64,7 +67,12 @@ Es una herramienta matemática utilizada para analizar señales en el dominio de
 
 - Detección de eventos transitorios o cambios rápidos en la señal
 
-### Tipos comunes de wavelets en bioseñales:
+### Tipos comunes de wavelets:
+
+<p align="center">
+  <img src="https://github.com/user-attachments/assets/8433c33e-95ca-4b80-aff1-ba07685b5b12" alt="Figura 2: Tipos comunes de wavelets." width="50%">
+  <br><em>Figura 2: Tipos comunes de wavelets.</em>
+</p>
 
 - Daubechies (db4, db6, etc.): Usada para señales discretas, generalmente en ECG por su forma similar al complejo QRS.
   
@@ -74,6 +82,10 @@ Es una herramienta matemática utilizada para analizar señales en el dominio de
 
 - Coiflets: Buena localización en el tiempo y frecuencia.
 
-![image](https://github.com/user-attachments/assets/8433c33e-95ca-4b80-aff1-ba07685b5b12)
-<br><em>Figura 2: Tipos comunes de wavelets. </em></p>
+### Diagrama de flujo
+
+<p align="center">
+  <img src="https://github.com/user-attachments/assets/b0c6341d-0450-4af8-9ac3-3ec89dcc4f8b" alt="Figura 4: Diagrama en blanco para anotaciones o flujo personalizado." width="50%">
+  <br><em>Figura 4: Diagrama en blanco para anotaciones o flujo personalizado.</em>
+</p>
 
