@@ -1,8 +1,8 @@
 # HRV con transformada Wavelet
 ## Descripción 
-En este laboratorio trabajamos en el análisis de la variabilidad de la frecuencia cardíaca (HRV) utilizando la transformada wavelet. El objetivo principal fue ver cómo iba cambiando la frecuencia cardíaca de la persona a lo largo del tiempo, especialmente cuando se inducían cambios que afectan la actividad simpática y parasimpática del sistema nervioso.
+En este laboratorio trabajamos en el análisis de la variabilidad de la frecuencia cardíaca (HRV) utilizando la transformada Wavelet. El objetivo principal fue ver cómo iba cambiando la frecuencia cardíaca de la persona a lo largo del tiempo, especialmente cuando se inducían cambios que afectan la actividad simpática y parasimpática del sistema nervioso.
 
-Para ello, adquirimos una señal ECG durante 300 segundos usando un DAQ y programamos todo en Python. Primero filtramos la señal con un filtro IIR, luego identificamos los picos R y calculamos los intervalos R-R. A partir de ahí analizamos la HRV tanto en el dominio del tiempo como en el dominio tiempo-frecuencia. En este último usamos la transformada wavelet para ver cómo se comporta la potencia espectral en diferentes bandas de frecuencia a lo largo del tiempo.
+Para ello, adquirimos una señal ECG durante 300 segundos usando un DAQ y programamos todo en Python. Primero filtramos la señal con un filtro IIR, luego identificamos los picos R y calculamos los intervalos R-R. A partir de ahí analizamos la HRV tanto en el dominio del tiempo como en el dominio tiempo-frecuencia. En este último usamos la transformada Wavelet para ver cómo se comporta la potencia espectral en diferentes bandas de frecuencia a lo largo del tiempo.
 
 ## Tener en cuenta:
 1. Se usa el módulo AD8232 para la toma del ECG.
@@ -21,7 +21,7 @@ Para ello, adquirimos una señal ECG durante 300 segundos usando un DAQ y progra
 
 6. Los electrodos deben estar bien colocados como lo indica una guía médica.
 7. Evitar movimientos bruscos o cambios de posición durante la grabación de la señal.
-8. Seleccionar una función wavelet adecuada para señales biológicas.
+8. Seleccionar una función Wavelet adecuada para señales biológicas.
 
 ## Fundamento teórico
 ### Actividades del sistema nervioso autónomo
@@ -57,7 +57,7 @@ Las bandas de frecuencia más utilizadas en el análisis espectral de la HRV org
 - *HF (High Frequency):* 0.15–0.4 Hz (predominantemente parasimpática, relacionada con la respiración)
 
 ### Transformada Wavelet
-Es una herramienta matemática utilizada para analizar señales en el dominio del *tiempo* y la *frecuencia* **simultáneamente**. A diferencia de la transformada de Fourier, que representa una señal solo en términos de frecuencias globales, la transformada wavelet puede capturar frecuencias locales en distintos momentos del tiempo, como la HRV, en el dominio tiempo-frecuencia. Descompone una señal en pequeñas ondas llamadas wavelets (ondículas), que están localizadas tanto en el tiempo como en la frecuencia. Estas ondículas pueden estirarse (para analizar componentes de baja frecuencia) o comprimirse (para componentes de alta frecuencia).
+Es una herramienta matemática utilizada para analizar señales en el dominio del *tiempo* y la *frecuencia* **simultáneamente**. A diferencia de la transformada de Fourier, que representa una señal solo en términos de frecuencias globales, la transformada Wavelet puede capturar frecuencias locales en distintos momentos del tiempo, como la HRV, en el dominio tiempo-frecuencia. Descompone una señal en pequeñas ondas llamadas Wavelets (ondículas), que están localizadas tanto en el tiempo como en la frecuencia. Estas ondículas pueden estirarse (para analizar componentes de baja frecuencia) o comprimirse (para componentes de alta frecuencia).
 
 #### Usos en señales biológicas:
 
@@ -67,11 +67,11 @@ Es una herramienta matemática utilizada para analizar señales en el dominio de
 
 - Detección de eventos transitorios o cambios rápidos en la señal
 
-### Tipos comunes de wavelets:
+### Tipos comunes de Wavelets:
 
 <p align="center">
   <img src="https://github.com/user-attachments/assets/8433c33e-95ca-4b80-aff1-ba07685b5b12" alt="Figura 2: Tipos comunes de wavelets." width="50%">
-  <br><em>Figura 2: Tipos comunes de wavelets.</em>
+  <br><em>Figura 2: Tipos comunes de Wavelets.</em>
 </p>
 
 - *Daubechies:* Usada para señales discretas, generalmente en ECG por su forma similar al complejo QRS.
