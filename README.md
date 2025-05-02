@@ -262,4 +262,24 @@ Después, analizaremos la HRV, la variabilidad de la frecuencia cardíaca en el 
 | pNN50                         | 72.54       | %        |
 | Media de los intervalos RR    | 0.6861      | s        |
 
+### Aplicación Transformada Wavelet
+Para realizar la transformada Wavelet continua se debe utilizar la libreria de pywt en python para facilitarnos el analisis de HRV por medio de espectograma el cual nos permite una caracterización especifica y detallada de la actividad cardíaca, tambien utilizamos Wavelet de Morlet porque nos permite ver cómo varían las bandas baja y alta frecuencia a lo largo del tiempo y comparte similitudes en las oscilaciones suaves de la señal biologica, se utilizan 128 escalas por que nos proporciona una resolución adecuada para observar la dinámica temporal de las bandas LF y HF en el análisis de HRV, respetando las limitaciones computacionales y manteniendo la interpretación visual clara y precisa.
+```python
+# --- RR como señal base para análisis ---
+rr_times = np.cumsum(intervalos)  # tiempo relativo de cada latido
+rr_signal = intervalos - np.mean(intervalos)  # centramos la señal para análisis
 
+# --- Wavelet CWT ---
+# Elección de wavelet biológica y escalas
+wavelet = 'cmor1.5-1.0'  # Morlet complejo, buena resolución en tiempo-frecuencia
+scales = np.arange(1, 128)  # Escalas 
+
+# Aplicar CWT
+coef, freqs = pywt.cwt(rr_signal, scales, wavelet, sampling_period=np.mean(intervalos))
+```
+![image](https://github.com/user-attachments/assets/77172230-4e8f-42e7-8a47-c112a065d757)
+
+| Analisis temporal y espectral  | 0-100s     | 100-200s   |200-300s|
+|--------------------------------|-------------|----------|----------|
+|  Banda de alta frecuencia (0.15–0.4 Hz)  |  En esta zona se puede visualizar una alta *actividad parasimpatica* indicando un estado de relajación especialmente alrededor de los 0.35–0.4 Hz, donde se manifiesta con tonalidades amarillas y verdosas  | Se puede notar que se registra una caída progresiva de la potencia espectral en esta banda. La tonalidad cambia hacia el azul y se puede interpretar como una *disminución de la actividad parasimpática*.| La actividad vagal se ve suprimida y se torna a un estado de estrés o *activación simpática*.|
+| Banda de baja frecuencia (0.04–0.15 Hz)  | Se presenta una potencia moderada en esta banda, reflejada por algunos patrones verdosos, aunque no tan intensos como en la banda alta frecuencia.| A medida que avanza el tiempo, se observa un leve incremento en la potencia relativa en la banda de baja frecuencia, especialmente alrededor de los 200 s, lo cual puede ser interpretado como una activación simpática relativa, dado que el componente baja frecuencia puede reflejar tanto simpático como parasimpático.|
