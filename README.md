@@ -283,3 +283,23 @@ coef, freqs = pywt.cwt(rr_signal, scales, wavelet, sampling_period=np.mean(inter
 |--------------------------------|-------------|----------|----------|
 |  Banda de alta frecuencia (0.15–0.4 Hz)  |  En esta zona se puede visualizar una alta *actividad parasimpatica* indicando un estado de relajación especialmente alrededor de los 0.35–0.4 Hz, donde se manifiesta con tonalidades amarillas y verdosas  | Se puede notar que se registra una caída progresiva de la potencia espectral en esta banda. La tonalidad cambia hacia el azul y se puede interpretar como una *disminución de la actividad parasimpática*.| La actividad vagal se ve suprimida y se torna a un estado de estrés o *activación simpática*.|
 | Banda de baja frecuencia (0.04–0.15 Hz)  | Se presenta una potencia moderada en esta banda, reflejada por algunos patrones verdosos, aunque no tan intensos como en la banda alta frecuencia.| A medida que avanza el tiempo, se observa un leve incremento en la potencia relativa en la banda de baja frecuencia, especialmente alrededor de los 200 s, lo cual puede ser interpretado como una activación simpática relativa, dado que el componente baja frecuencia puede reflejar tanto simpático como parasimpático.|
+
+
+#### Diferencias entre el análisis en el dominio del tiempo y el dominio tiempo-frecuencia
+
+El análisis en el dominio del tiempo permite observar el cambio  de los intervalos RR a lo largo del tiempo, pero no da información detallada sobre los componentes de frecuencia que conforman la señal.Aunque se puede ver que la señal cambia con el tiempo, no se puede saber con claridad qué frecuencias están presentes ni en qué momento aparecen o desaparecen las frecuencias de baja y alta frecuencia (LF y HF).
+En cambio, con el análisis tiempo-frecuencia ,como el que se hace con la Transformada Wavelet Continua (CWT), se puede observar qué frecuencias hay en cada momento. Esto es muy útil en señales como la HRV, que cambian con el estado del cuerpo. 
+
+#### Efecto del uso de diferentes wavelets
+La función wavelet que se utilizó afecta mucho los resultados del análisis. En este caso, se usó la wavelet de Morlet, que es efectiva para el analisis las oscilacione suaves y continuos en frecuencias, justo como los que aparecen en la HRV.
+
+Si se utilizaran otras wavelets, como Daubechies, podríamos detectar cambios más bruscos en la señal, pero se vería con menos claridad las frecuencias, lo cual dificultaria identificar con precisión las bandas espectrales. Otra opción sería Mexican Hat, que resalta los picos o transiciones rápidas, pero no muestra bien las oscilaciones suaves.
+
+Por tanto, según el tipo de señal y lo que se quiere analizar, se debe elegir la wavelet.Para el caso de HRV, donde se quiere observar cómo varían las bandas LF y HF a lo largo del tiempo, la wavelet de Morlet es una de las mejores opciones.
+
+#### Aplicaciones reales de esta práctica
+
+Este tipo de análisis tiene muchas aplicaciones útiles en la vida real. Por ejemplo, se puede usar para estudiar cómo está funcionando el sistema nervioso autónomo, identificando si la persona está en un estado más activo, como cuando está estresada, o más relajado. También es muy útil para monitorear el estrés, la fatiga o la recuperación, algo que se aplica mucho en deportistas o personas que hacen trabajos exigentes. Además, puede ayudar a detectar problemas cardíacos o neurológicos de forma temprana. Hoy en día, esta técnica también se usa en relojes inteligentes y otros dispositivos que miden el nivel de estrés, el sueño o las emociones. Incluso en investigaciones sobre el cerebro y la salud mental, el cambio de la frecuencia cardíaca es una señal importante que puede mostrar cómo responde una persona ante distintas situaciones.
+
+## Bliografia 
+
