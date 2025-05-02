@@ -265,11 +265,11 @@ Después, analizaremos la HRV, la variabilidad de la frecuencia cardíaca en el 
 ### Aplicación Transformada Wavelet
 Para realizar la transformada Wavelet continua se debe utilizar la libreria de pywt en python para facilitarnos el analisis de HRV por medio de espectograma el cual nos permite una caracterización especifica y detallada de la actividad cardíaca, tambien utilizamos Wavelet de Morlet porque nos permite ver cómo varían las bandas baja y alta frecuencia a lo largo del tiempo y comparte similitudes en las oscilaciones suaves de la señal biologica, se utilizan 128 escalas por que nos proporciona una resolución adecuada para observar la dinámica temporal de las bandas LF y HF en el análisis de HRV, respetando las limitaciones computacionales y manteniendo la interpretación visual clara y precisa.
 ```python
-# --- RR como señal base para análisis ---
+# RR como señal base para análisis 
 rr_times = np.cumsum(intervalos)  # tiempo relativo de cada latido
-rr_signal = intervalos - np.mean(intervalos)  # centramos la señal para análisis
+rr_signal = intervalos - np.mean(intervalos)  # centrar la señal para análisis
 
-# --- Wavelet CWT ---
+# Wavelet CWT 
 # Elección de wavelet biológica y escalas
 wavelet = 'cmor1.5-1.0'  # Morlet complejo, buena resolución en tiempo-frecuencia
 scales = np.arange(1, 128)  # Escalas 
