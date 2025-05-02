@@ -25,13 +25,13 @@ Para ello, adquirimos una señal ECG durante 300 segundos usando un DAQ y progra
 
 ## Fundamento teórico
 ### Actividades del sistema nervioso autónomo
-El sistema nervioso autónomo (SNA) regula las funciones involuntarias del cuerpo, como la frecuencia cardíaca, la presión arterial, la respiración, etc... que se divide en dos ramas para mantener el equilibrio fisiológico (homeostasis).
+El sistema nervioso autónomo (SNA) regula las funciones involuntarias del cuerpo, como la frecuencia cardíaca, la presión arterial, la respiración, etc... que se divide en dos ramas para mantener el equilibrio fisiológico (homeostasis) [1].
 
 -   #### Actividad simpática:  
-    Activa la respuesta de la llamada lucha o huída, aumentando la frecuencia cardíaca, la fuerza de contracción del corazón aumenta y dilata las vías respiratorias.
+    Activa la respuesta de la llamada lucha o huída, aumentando la frecuencia cardíaca, la fuerza de contracción del corazón aumenta y dilata las vías respiratorias [2]
     
 -   #### Actividad parasimpática:  
-   Promueve el estado de descanso o digestión, disminuyendo la frecuencia cardíaca y facilitando la recuperación del cuerpo.
+   Promueve el estado de descanso o digestión, disminuyendo la frecuencia cardíaca y facilitando la recuperación del cuerpo [2]
    
 <p align="center">
   <img src="https://github.com/user-attachments/assets/49cc6dec-dc0c-4894-9ac4-b23ff1aefdb8" alt="Figura 1: Sistema nervioso autónomo (simpático y parasimpático).">
@@ -45,7 +45,7 @@ Por un lado, en la actividad simpática, se incrementa la FC al estimular los re
 El balance entre estas dos actividades regula dinámicamente la frecuencia cardíaca en reposo y durante situaciones de estrés o ejercicio.
 
 ### Variabilidad de la frecuencia cardíaca (HRV)
-La HRV se refiere a las fluctuaciones en los intervalos R-R, estos corresponden al tiempo entre dos picos R sucesivos del ECG, y reflejan la modulación del sistema nervioso autónomo sobre el corazón. Una HRV alta generalmente indica buena regulación autonómica y estado de salud, mientras que una HRV baja puede estar asociada a estrés, fatiga o disfunción del sistema nervioso autónomo.
+La HRV se refiere a las fluctuaciones en los intervalos R-R, estos corresponden al tiempo entre dos picos R sucesivos del ECG, y reflejan la modulación del sistema nervioso autónomo sobre el corazón. Una HRV alta generalmente indica buena regulación autonómica y estado de salud, mientras que una HRV baja puede estar asociada a estrés, fatiga o disfunción del sistema nervioso autónomo [3].
 
 Las bandas de frecuencia más utilizadas en el análisis espectral de la HRV organizadas de en orden ascendente de frecuencias son:
 
@@ -58,7 +58,7 @@ Las bandas de frecuencia más utilizadas en el análisis espectral de la HRV org
 - *HF (High Frequency):* 0.15–0.4 Hz (predominantemente parasimpática, relacionada con la respiración)
 
 ### Transformada Wavelet
-Es una herramienta matemática utilizada para analizar señales en el dominio del *tiempo* y la *frecuencia* **simultáneamente**. A diferencia de la transformada de Fourier, que representa una señal solo en términos de frecuencias globales, la transformada Wavelet puede capturar frecuencias locales en distintos momentos del tiempo, como la HRV, en el dominio tiempo-frecuencia. Descompone una señal en pequeñas ondas llamadas Wavelets (ondículas), que están localizadas tanto en el tiempo como en la frecuencia. Estas ondículas pueden estirarse (para analizar componentes de baja frecuencia) o comprimirse (para componentes de alta frecuencia).
+Es una herramienta matemática utilizada para analizar señales en el dominio del *tiempo* y la *frecuencia* **simultáneamente**. A diferencia de la transformada de Fourier, que representa una señal solo en términos de frecuencias globales, la transformada Wavelet puede capturar frecuencias locales en distintos momentos del tiempo, como la HRV, en el dominio tiempo-frecuencia. Descompone una señal en pequeñas ondas llamadas Wavelets (ondículas), que están localizadas tanto en el tiempo como en la frecuencia. Estas ondículas pueden estirarse (para analizar componentes de baja frecuencia) o comprimirse (para componentes de alta frecuencia) [4]
 
 #### Usos en señales biológicas:
 
@@ -278,7 +278,13 @@ scales = np.arange(1, 128)  # Escalas
 # Aplicar CWT
 coef, freqs = pywt.cwt(rr_signal, scales, wavelet, sampling_period=np.mean(intervalos))
 ```
-![image](https://github.com/user-attachments/assets/77172230-4e8f-42e7-8a47-c112a065d757)
+
+<p align="center">
+  <img src="https://github.com/user-attachments/assets/77172230-4e8f-42e7-8a47-c112a065d757" alt="Figura 6. Espectrograma transformada Wavelet tipo Morlet" width="600">
+</p>
+
+<p align="center"><b>Figura 6.</b> Espectrograma transformada Wavelet tipo Morlet</p>
+
 
 | Analisis temporal y espectral  | 0-100s     | 100-200s   |200-300s|
 |--------------------------------|-------------|----------|----------|
@@ -303,4 +309,13 @@ Por tanto, según el tipo de señal y lo que se quiere analizar, se debe elegir 
 Este tipo de análisis tiene muchas aplicaciones útiles en la vida real. Por ejemplo, se puede usar para estudiar cómo está funcionando el sistema nervioso autónomo, identificando si la persona está en un estado más activo, como cuando está estresada, o más relajado. También es muy útil para monitorear el estrés, la fatiga o la recuperación, algo que se aplica mucho en deportistas o personas que hacen trabajos exigentes. Además, puede ayudar a detectar problemas cardíacos o neurológicos de forma temprana. Hoy en día, esta técnica también se usa en relojes inteligentes y otros dispositivos que miden el nivel de estrés, el sueño o las emociones. Incluso en investigaciones sobre el cerebro y la salud mental, el cambio de la frecuencia cardíaca es una señal importante que puede mostrar cómo responde una persona ante distintas situaciones.
 
 ## Bliografia 
+[1] Coon, E. (2023, julio 3). Introducción al sistema nervioso autónomo. Manual MSD versión para público general; Manuales MSD. https://www.msdmanuals.com/es/hogar/enfermedades-cerebrales-medulares-y-nerviosas/trastornos-del-sistema-nervioso-aut%C3%B3nomo/introducci%C3%B3n-al-sistema-nervioso-aut%C3%B3nomo
+[2] Torres, A., & Serrano, D. C. (2024, diciembre 10). Introducción al sistema nervioso periférico.
+[3] (S/f). Ouraring.com. Recuperado el 2 de mayo de 2025, de https://support.ouraring.com/hc/es/articles/360025441974-Variabilidad-de-la-frecuencia-card%C3%ADaca
+[4] (S/f-b). Udlap.mx. Recuperado el 2 de mayo de 2025, de http://catarina.udlap.mx/u_dl_a/tales/documentos/meie/osorio_s_a/capitulo2.pdf
+
+
+
+
+
 
