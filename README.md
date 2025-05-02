@@ -26,6 +26,7 @@ Para ello, adquirimos una señal ECG durante 300 segundos usando un DAQ y progra
 ## Fundamento teórico
 ### Actividades del sistema nervioso autónomo
 El sistema nervioso autónomo (SNA) regula las funciones involuntarias del cuerpo, como la frecuencia cardíaca, la presión arterial, la respiración, etc... que se divide en dos ramas para mantener el equilibrio fisiológico (homeostasis).
+
 -   #### Actividad simpática:  
     Activa la respuesta de la llamada lucha o huída, aumentando la frecuencia cardíaca, la fuerza de contracción del corazón aumenta y dilata las vías respiratorias.
     
